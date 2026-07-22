@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Рейтинг ИИ-проводников 2026</title>
+<link rel="stylesheet" href="fonts-embedded.css">
+<style>
+@font-face{font-family:'Rostelecom Basis';src:url('fonts/RostelecomBasis-Light.ttf') format('truetype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Rostelecom Basis';src:url('fonts/RostelecomBasis-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Rostelecom Basis';src:url('fonts/RostelecomBasis-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+  --purple:#7700FF;--purple-dark:#5A00C7;--purple-light:#F3EBFF;--purple-muted:#9B59FF;
+  --orange:#FF4F12;--orange-light:#FFF0EB;
+  --bg:#F5F5F7;--surface:#FFFFFF;--surface-alt:#FAFAFC;
+  --text:#1A1A2E;--text-secondary:#6B6B80;--border:#E8E8EF;
+  --shadow:0 4px 24px rgba(119,0,255,.08);
+  --radius:16px;--radius-sm:10px;
+  --level-onboard:#94A3B8;--level-1:#6366F1;--level-2:#7700FF;--level-3:#5A00C7;--level-pro:#FF4F12;
+  --footer-bg:#FFFFFF;--footer-text:#1A1A2E;--footer-muted:#6B6B80;--footer-border:#E8E8EF;
+}
+[data-theme="dark"]{
+  --purple:#9B59FF;--purple-dark:#7700FF;--purple-light:#2A1A4A;--purple-muted:#B794FF;
+  --orange:#FF6B3D;--orange-light:#3D1A10;
+  --bg:#0F0F1A;--surface:#1A1A2E;--surface-alt:#222240;
+  --text:#F0F0F5;--text-secondary:#9898B0;--border:#2E2E48;
+  --shadow:0 4px 24px rgba(0,0,0,.4);
+  --footer-bg:#06081d;--footer-text:#F0F0F5;--footer-muted:#9898B0;--footer-border:#2E2E48;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Rostelecom Basis',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh;transition:background .3s,color .3s;-webkit-text-fill-color:currentColor;font-synthesis:none}
+
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* Header */
+.header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);transition:background .3s}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:16px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
+.logo-ai{font-size:2rem;font-weight:700;color:var(--purple);position:relative;line-height:1}
+.logo-ai .star{position:absolute;top:-2px;right:-8px;color:var(--orange);font-size:.7rem}
+.logo-text{font-size:1.1rem;font-weight:500;color:var(--text-secondary)}
+.header-actions{display:flex;align-items:center;gap:12px}
+.theme-btn{background:var(--surface-alt);border:1px solid var(--border);border-radius:50%;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:all .2s}
+.theme-btn:hover{border-color:var(--purple);background:var(--purple-light)}
+
+/* Hero */
+.hero{padding:40px 0 32px}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:8px;background:linear-gradient(135deg,var(--purple),var(--orange));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.hero p{color:var(--text-secondary);font-size:1.05rem;max-width:640px}
+
+/* Progress */
+.progress-section{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:32px}
+.progress-card{background:var(--surface);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border:1px solid var(--border);transition:all .3s}
+.progress-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(119,0,255,.12)}
+.progress-card h3{font-size:.85rem;font-weight:500;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
+.progress-numbers{display:flex;align-items:baseline;gap:6px;margin-bottom:12px}
+.progress-current{font-size:2.2rem;font-weight:700;color:var(--purple);font-family:'Rostelecom Basis',sans-serif;-webkit-text-fill-color:var(--purple)}
+.progress-separator{font-size:1.2rem;color:var(--text-secondary);font-family:'Rostelecom Basis',sans-serif}
+.progress-target{font-size:1.2rem;color:var(--text-secondary);font-weight:500;font-family:'Rostelecom Basis',sans-serif}
+.progress-bar-bg{height:10px;background:var(--border);border-radius:99px;overflow:hidden}
+.progress-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--purple),var(--orange));transition:width .8s cubic-bezier(.4,0,.2,1)}
+.progress-label{font-size:.8rem;color:var(--text-secondary);margin-top:8px}
+
+/* Tabs */
+.tabs{display:flex;gap:4px;background:var(--surface-alt);border-radius:var(--radius-sm);padding:4px;margin-bottom:24px;border:1px solid var(--border);width:fit-content}
+.tab{padding:10px 24px;border:none;background:transparent;border-radius:8px;font-family:inherit;font-size:.95rem;font-weight:500;color:var(--text-secondary);cursor:pointer;transition:all .2s}
+.tab.active{background:var(--purple);color:#fff;box-shadow:0 2px 8px rgba(119,0,255,.3)}
+.tab:hover:not(.active){color:var(--purple);background:var(--purple-light)}
+
+/* Controls */
+.controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px;align-items:center}
+.quarter-group{display:flex;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:3px}
+.q-btn{padding:8px 16px;border:none;background:transparent;border-radius:7px;font-family:inherit;font-size:.875rem;font-weight:500;color:var(--text-secondary);cursor:pointer;transition:all .2s;white-space:nowrap;-webkit-text-fill-color:currentColor}
+.q-btn.active{background:var(--purple);color:#fff;font-weight:700;-webkit-text-fill-color:#fff}
+[data-theme="dark"] .q-btn.active{background:var(--purple);color:#fff;-webkit-text-fill-color:#fff}
+.filter-select,.search-input{padding:8px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:inherit;font-size:.875rem;background:var(--surface);color:var(--text);transition:border .2s}
+.filter-select:focus,.search-input:focus{outline:none;border-color:var(--purple)}
+.search-input{min-width:200px}
+.checkbox-label{display:flex;align-items:center;gap:6px;font-size:.875rem;color:var(--text-secondary);cursor:pointer;user-select:none}
+.checkbox-label input{accent-color:var(--purple)}
+
+/* Table */
+.table-wrap{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);overflow:visible;margin-bottom:40px;padding-bottom:8px}
+#ratingTable{font-family:'Rostelecom Basis',sans-serif;font-synthesis:none}
+table{width:100%;border-collapse:collapse;overflow:visible}
+thead th{background:var(--purple);color:#fff;padding:14px 16px;text-align:left;font-weight:700;font-size:.875rem;font-family:'Rostelecom Basis',sans-serif;cursor:pointer;user-select:none;white-space:nowrap;transition:background .2s;-webkit-text-fill-color:#fff}
+thead th:first-child{border-radius:0}
+thead th:hover{background:var(--purple-dark)}
+thead th .sort-icon{opacity:.5;margin-left:4px;font-size:.75rem}
+thead th.sorted .sort-icon{opacity:1}
+tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--purple-light)}
+[data-theme="dark"] tbody tr:hover{background:rgba(119,0,255,.08)}
+tbody tr.inactive{opacity:.45}
+tbody td{padding:12px 16px;font-size:.9rem;font-family:'Rostelecom Basis',sans-serif;overflow:visible;position:relative}
+td.num{color:var(--text-secondary);font-weight:400;width:50px}
+td.name{font-weight:500}
+td.metric{text-align:center;font-weight:400}
+td.metric.zero{color:var(--text-secondary)}
+td.level-cell{overflow:visible}
+
+/* Level badge */
+.level-badge{display:inline-flex;align-items:center;padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:500;white-space:nowrap;cursor:help;position:relative;transition:box-shadow .15s,filter .15s;-webkit-text-fill-color:currentColor}
+.level-badge:hover{box-shadow:0 2px 8px rgba(119,0,255,.25);filter:brightness(1.05)}
+.level-onboard{background:#E2E8F0;color:#475569}
+.level-1{background:#EEF2FF;color:#4338CA}
+.level-2{background:var(--purple-light);color:var(--purple)}
+.level-3{background:#EDE9FE;color:#5B21B6}
+.level-pro{background:linear-gradient(135deg,#FFF0EB,#FFE4D6);color:var(--orange)}
+[data-theme="dark"] .level-onboard{background:#334155;color:#CBD5E1}
+[data-theme="dark"] .level-1{background:#312E81;color:#C7D2FE}
+[data-theme="dark"] .level-2{background:#3B0764;color:#D8B4FE}
+[data-theme="dark"] .level-3{background:#4C1D95;color:#DDD6FE}
+[data-theme="dark"] .level-pro{background:linear-gradient(135deg,#431407,#7C2D12);color:#FDBA74}
+
+/* Tooltip popup — fixed layer, not clipped by table */
+.tooltip{
+  position:fixed;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:16px;
+  min-width:280px;
+  max-width:340px;
+  box-shadow:0 12px 40px rgba(0,0,0,.18);
+  z-index:1000;
+  pointer-events:none;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .15s,visibility .15s;
+}
+.tooltip.visible{opacity:1;visibility:visible}
+.tooltip::after{display:none}
+.tooltip h4{font-size:.85rem;color:var(--purple);margin-bottom:8px;font-weight:700}
+.tooltip ul{list-style:none;font-size:.8rem;color:var(--text-secondary)}
+.tooltip li{padding:3px 0;padding-left:16px;position:relative}
+.tooltip li::before{content:'•';position:absolute;left:0;color:var(--orange)}
+
+/* Bonus tab */
+.bonus-grid{display:grid;gap:16px;margin-bottom:40px}
+.bonus-card{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow);transition:transform .2s}
+.bonus-card:hover{transform:translateY(-2px)}
+.bonus-card-header{background:var(--purple);color:#fff;padding:16px 24px;display:flex;align-items:center;gap:16px}
+.bonus-card-num{background:rgba(255,255,255,.2);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0}
+.bonus-card-title{font-size:1.1rem;font-weight:700}
+.bonus-card-body{padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.bonus-section h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-secondary);margin-bottom:8px;font-weight:700}
+.bonus-section p{font-size:.875rem;white-space:pre-line;line-height:1.6}
+.bonus-note{background:var(--orange-light);border-left:3px solid var(--orange);padding:16px 20px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-bottom:24px;font-size:.875rem;color:var(--text-secondary)}
+.bonus-note strong{color:var(--text)}
+
+/* Footer */
+.site-footer{
+  margin-top:20px;
+  padding:40px 0 32px;
+  background:var(--footer-bg);
+  color:var(--footer-text);
+  border-top:1px solid var(--footer-border);
+}
+.footer-columns{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;margin-bottom:32px}
+.footer-col h3{font-size:1rem;font-weight:700;color:var(--purple);margin-bottom:16px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{color:var(--footer-text);text-decoration:none;font-size:.9rem;transition:color .2s}
+.footer-links a:hover{color:var(--purple)}
+.footer-contact-text{font-size:.9rem;color:var(--footer-muted);margin-bottom:8px;line-height:1.5}
+.footer-contact-email{display:inline-block;color:var(--footer-text);text-decoration:none;font-size:.9rem}
+.footer-contact-email:hover{color:var(--purple);text-decoration:underline}
+.footer-copy{font-size:.8rem;color:var(--footer-muted);text-align:left}
+
+/* Panel visibility */
+.panel{display:none}
+.panel.active{display:block}
+
+/* Empty state */
+.empty-state{text-align:center;padding:60px 20px;color:var(--text-secondary)}
+.empty-state h3{font-size:1.2rem;margin-bottom:8px;color:var(--text)}
+
+/* Loading */
+.loading-state{text-align:center;padding:48px 20px;color:var(--text-secondary)}
+.loading-state h3{color:var(--text);margin-bottom:8px}
+
+/* Responsive */
+@media(max-width:768px){
+  .table-wrap{overflow-x:auto;overflow-y:visible}
+  table{min-width:700px}
+  .controls{flex-direction:column;align-items:stretch}
+  .quarter-group{flex-wrap:wrap}
+  .tabs{width:100%}
+  .tab{flex:1;text-align:center;padding:10px 12px}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container header-inner">
+    <a class="logo" href="https://afisha-university.rt.ru/ai_mentor" target="_blank">
+      <span class="logo-ai">Ai<span class="star">✦</span></span>
+      <span class="logo-text">Проводники</span>
+    </a>
+    <div class="header-actions">
+      <button class="theme-btn" id="themeToggle" title="Сменить тему">🌙</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>Рейтинг ИИ-проводников</h1>
+    <p>Активность менторов по ИИ в Ростелекоме</p>
+  </section>
+
+  <section class="progress-section" id="progressSection"></section>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="rating" role="tab">Рейтинг</button>
+    <button class="tab" data-tab="bonus" role="tab">Бонусная программа</button>
+  </nav>
+
+  <div class="panel active" id="panel-rating" role="tabpanel">
+    <div class="controls">
+      <div class="quarter-group" id="quarterGroup">
+        <button class="q-btn" data-quarter="q1">1 кв. 2026</button>
+        <button class="q-btn active" data-quarter="q2">2 кв. 2026</button>
+      </div>
+      <input type="search" class="search-input" id="searchInput" placeholder="Поиск по ФИО…">
+      <select class="filter-select" id="levelFilter">
+        <option value="">Все уровни</option>
+        <option value="Онбординг">Онбординг</option>
+        <option value="Первый уровень">Первый уровень</option>
+        <option value="Второй уровень">Второй уровень</option>
+        <option value="Третий уровень">Третий уровень</option>
+        <option value="Четвертый уровень — PRO">PRO</option>
+      </select>
+      <label class="checkbox-label">
+        <input type="checkbox" id="activeOnly"> Только активные
+      </label>
+    </div>
+    <div class="table-wrap">
+      <table id="ratingTable">
+        <thead>
+          <tr>
+            <th data-sort="rank">№ <span class="sort-icon">↕</span></th>
+            <th data-sort="name">ФИО <span class="sort-icon">↕</span></th>
+            <th data-sort="sessions">Сессии на Точке Роста <span class="sort-icon">↕</span></th>
+            <th data-sort="masterclasses">Мастер-классы <span class="sort-icon">↕</span></th>
+            <th data-sort="initiatives">Инициативы от Нейрошлюза <span class="sort-icon">↕</span></th>
+            <th data-sort="total">Всего <span class="sort-icon">↕</span></th>
+            <th data-sort="level">Бонусная программа <span class="sort-icon">↕</span></th>
+          </tr>
+        </thead>
+        <tbody id="ratingBody">
+          <tr><td colspan="7"><div class="loading-state"><h3>Загрузка данных…</h3></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-bonus" role="tabpanel">
+    <div class="bonus-note">
+      <strong>❗ Важно:</strong> если в течение полугодия ИИ-проводник не проявил абсолютно никакой активности, то бейдж с портала убирается. Восстановить его можно будет в следующем полугодии. Любая активность сразу же активирует бейдж.
+    </div>
+    <div class="bonus-grid" id="bonusGrid"></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h3>Корпоративные ресурсы</h3>
+        <ul class="footer-links">
+          <li><a href="https://university.rt.ru" target="_blank" rel="noopener">Онлайн-университет</a></li>
+          <li><a href="https://ai.rt.ru/" target="_blank" rel="noopener">Нейрошлюз</a></li>
+          <li><a href="https://www.portal.rt.ru/wps/myportal/Home/projects/Grow-up#/search/mentor" target="_blank" rel="noopener">Точка роста</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Контакты</h3>
+        <p class="footer-contact-text">Куратор ИИ-сообщества, Дарья Четвергова:</p>
+        <a class="footer-contact-email" href="mailto:darya.chetvergova@rt.ru">darya.chetvergova@rt.ru</a>
+        <ul class="footer-links" style="margin-top:16px">
+          <li><a href="https://max.ru/join/ZPUm-NiwUX-FmQrOhg68OYbcHsm2gbDYLSQ2I5N8qmI" target="_blank" rel="noopener">Чат с ИИ-проводниками</a></li>
+          <li><a href="https://afisha-university.rt.ru/ai_mentor#rec2360964531" target="_blank" rel="noopener">Отзыв о работе ИИ-собщества</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-copy">© Все права защищены. 2026, ПАО «Ростелеком».</p>
+  </div>
+</footer>
+
+<script type="application/json" id="mentors-data">
+{
+  "q1": [
+    {
+      "name": "Гарифулин Игорь",
+      "sessions": 10,
+      "masterclasses": 0,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 11,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Безверхая Светлана",
+      "sessions": 3,
+      "masterclasses": 4,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 7,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Кулебякина Вера",
+      "sessions": 0,
+      "masterclasses": 2,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 3,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Бучнев Сергей",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Сторожев Александр",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Арсентиева Светлана",
+      "sessions": 1,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 2,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Ларин Сергей",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 2,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Казначейский Никита",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 2,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Башмакова Александра",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Кулаков Александр",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Смирнов Максим",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Цемежевская Валерия",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Чернявский Валерий",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Анисимов Виталий",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 1,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Абрамов Игорь",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Аганин Геннадий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Андрейченко Надежда",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Антонов Вячеслав",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Бондарович Юлия",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Верещак Александр",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Вишняков Иван",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Власова Мария",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Внуковский Владислав",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Галиев Марсель",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Густей Юрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Гуськова Наталья",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Демидова Татьяна",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Доманова Гульнара",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Зеленцова Алина",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Зимин Максим",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Казанцев Сергей",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Колчина Наталья",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Кононенко Ирина",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Коротаев Евгений",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Костенко Анастасия",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Красноперов Дмитрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Куликова Ольга",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Кутепов Виталий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Лавренко Татьяна",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Лукин Евгений",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Мамнев Александр",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Орлов Дмитрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Петрова Светлана",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Прохоров Дмитрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Путро Екатерина",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Федорченко Александр",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Федотова Людмила",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Языкова Юлия",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Ярушкин Сергей",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    }
+  ],
+  "q2": [
+    {
+      "name": "Безверхая Светлана",
+      "sessions": 15,
+      "masterclasses": 14,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 29,
+      "level": "Третий уровень"
+    },
+    {
+      "name": "Гарифулин Игорь",
+      "sessions": 24,
+      "masterclasses": 1,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 26,
+      "level": "Второй уровень"
+    },
+    {
+      "name": "Кулебякина Вера",
+      "sessions": 0,
+      "masterclasses": 8,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 9,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Арсентиева Светлана",
+      "sessions": 1,
+      "masterclasses": 3,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 5,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Орлов Дмитрий",
+      "sessions": 4,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 4,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Кутепов Виталий",
+      "sessions": 0,
+      "masterclasses": 2,
+      "initiatives": 1,
+      "excelLevel": "Онбординг",
+      "total": 3,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Антонов Вячеслав",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Бучнев Сергей",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Сторожев Александр",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Языкова Юлия",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Ларин Сергей",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 2,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Абрамов Игорь",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Башмакова Александра",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Внуковский Владислав",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Галиев Марсель",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Кулаков Александр",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Смирнов Максим",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Цемежевская Валерия",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Чернявский Валерий",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Анисимов Виталий",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 1,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Казанцев Сергей",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Кудрявцева Мария",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Лукин Евгений",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Аганин Геннадий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Андрейченко Надежда",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Бондарович Юлия",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Верещак Александр",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Вишняков Иван",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Густей Юрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Гуськова Наталья",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Демидова Татьяна",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Доманова Гульнара",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Зимин Максим",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Колчина Наталья",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Кононенко Ирина",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Коротаев Евгений",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Костенко Анастасия",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Красноперов Дмитрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Куликова Ольга",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Лавренко Татьяна",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Мамнев Александр",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Петрова Светлана",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Прохоров Дмитрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Путро Екатерина",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Федорченко Александр",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Федотова Людмила",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Ярушкин Сергей",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    }
+  ],
+  "all": [
+    {
+      "name": "Безверхая Светлана",
+      "sessions": 15,
+      "masterclasses": 14,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 29,
+      "level": "Третий уровень"
+    },
+    {
+      "name": "Гарифулин Игорь",
+      "sessions": 24,
+      "masterclasses": 1,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 26,
+      "level": "Второй уровень"
+    },
+    {
+      "name": "Кулебякина Вера",
+      "sessions": 0,
+      "masterclasses": 8,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 9,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Арсентиева Светлана",
+      "sessions": 1,
+      "masterclasses": 3,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 5,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Орлов Дмитрий",
+      "sessions": 4,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 4,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Кутепов Виталий",
+      "sessions": 0,
+      "masterclasses": 2,
+      "initiatives": 1,
+      "excelLevel": "Онбординг",
+      "total": 3,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Антонов Вячеслав",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Бучнев Сергей",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Сторожев Александр",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Языкова Юлия",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Ларин Сергей",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 2,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Абрамов Игорь",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Башмакова Александра",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Внуковский Владислав",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Галиев Марсель",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Кулаков Александр",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Смирнов Максим",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Цемежевская Валерия",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Чернявский Валерий",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Анисимов Виталий",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 1,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Казанцев Сергей",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Кудрявцева Мария",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Лукин Евгений",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Аганин Геннадий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Андрейченко Надежда",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Бондарович Юлия",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Верещак Александр",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Вишняков Иван",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Густей Юрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Гуськова Наталья",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Демидова Татьяна",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Доманова Гульнара",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Зимин Максим",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Колчина Наталья",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Кононенко Ирина",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Коротаев Евгений",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Костенко Анастасия",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Красноперов Дмитрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Куликова Ольга",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Лавренко Татьяна",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Мамнев Александр",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Петрова Светлана",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Прохоров Дмитрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Путро Екатерина",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Федорченко Александр",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Федотова Людмила",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Ярушкин Сергей",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    }
+  ],
+  "bonusProgram": [
+    {
+      "num": 1,
+      "name": "Онбординг",
+      "requirements": "Основной показатель:\nПровести 1-2 сессии на Точке Роста",
+      "deadline": "До 31 марта\n1 квартал",
+      "rewards": "За выполнение основного показателя:\n1. Книга с пожеланиями от команды О-У"
+    },
+    {
+      "num": 2,
+      "name": "Первый уровень",
+      "requirements": "Основной показатель:\nПровести не менее 3 сессий на Точке Роста\nИЛИ\nПровести не менее 1 мастер-класса по запросу бизнеса",
+      "deadline": "До 31 марта\n1 квартал",
+      "rewards": "За выполнение основного показателя:\n1. Мерч от команды О-У\n2. 70 RTLikes за мастер-класс\n3. Безлимитный доступ к Нейрошлюзу"
+    },
+    {
+      "num": 3,
+      "name": "Второй уровень",
+      "requirements": "Основной показатель: \nПровести не менее 6 сессий на Точке Роста И 1-2 мастер-класса по запросу бизнеса\n\nОпционально: \nПринять участие в 1-2 инициативах от команды Нейрошлюза",
+      "deadline": "До 30 июня\n2 квартал",
+      "rewards": "За выполнение основного показателя:\n1. Мерч от команды внутрикома\n2. 100 RTLikes за мастер-класс\n3. Обучение навыкам публичных выступлений от провайдера\n4. Помощь с пиаром на Точке роста: рассылка об эксперте в почте/тг-канале О-У"
+    },
+    {
+      "num": 4,
+      "name": "Третий уровень",
+      "requirements": "Основной показатель: \nПровести не менее 10 сессий на Точке Роста И не менее 4 мастер-классов по запросу бизнеса\n\nОпционально:\nПринять участие в 3-4 инициативах от команды Нейрошлюза",
+      "deadline": "До 30 сентября\n3 квартал",
+      "rewards": "За выполнение основного показателя:\n1. Уникальный мерч для ИИ-проводников\n2. 100 RTLikes за каждый мастер-класс \n3. Углубленное обучение навыкам работы с ИИ от провайдера (по желанию зачисление вне конкурса на программы цифровых навыков) на 4 кв. либо на 2027 год\n4. Встреча с командой Нейрошлюза (в 4 кв. планы по развитию на 2027 год)"
+    },
+    {
+      "num": 5,
+      "name": "Четвертый уровень — PRO",
+      "requirements": "Основной показатель:\nПровести более 15 сессий за год на Точке Роста И не менее 6 мастер-классов по запросу бизнеса \n\nОпционально:\nПринять участие в более чем 4 инициативах от команды Нейрошлюза",
+      "deadline": "До 31 декабря\n4 квартал",
+      "rewards": "За выполнение основного показателя:\n1. Супер-приз\n2. Премия Признание\n3. Участие во внешних конференциях в 2027 году\n"
+    }
+  ],
+  "stats": {
+    "totalEvents": 98,
+    "targetEvents": 160,
+    "engagedMentors": 23,
+    "targetMentors": 40,
+    "q1Events": 37,
+    "q2Events": 98
+  }
+}
+</script>
+<script src="app.js"></script>
+</body>
+</html>
