@@ -6,10 +6,6 @@
 <title>Рейтинг ИИ-проводников 2026</title>
 <link rel="stylesheet" href="fonts-embedded.css">
 <style>
-@font-face{font-family:'Rostelecom Basis';src:url('fonts/RostelecomBasis-Light.ttf') format('truetype');font-weight:300;font-style:normal;font-display:swap}
-@font-face{font-family:'Rostelecom Basis';src:url('fonts/RostelecomBasis-Medium.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Rostelecom Basis';src:url('fonts/RostelecomBasis-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
-
 :root{
   --purple:#7700FF;--purple-dark:#5A00C7;--purple-light:#F3EBFF;--purple-muted:#9B59FF;
   --orange:#FF4F12;--orange-light:#FFF0EB;
@@ -30,8 +26,10 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Rostelecom Basis',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh;transition:background .3s,color .3s;-webkit-text-fill-color:currentColor;font-synthesis:none}
+html{scroll-behavior:smooth;font-family:'Rostelecom Basis',sans-serif}
+body{font-family:inherit;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh;transition:background .3s,color .3s;-webkit-text-fill-color:currentColor;font-synthesis:none}
+button,input,select,textarea,optgroup,option{font-family:inherit;font-synthesis:none}
+body.locked{overflow:hidden}
 
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
@@ -48,7 +46,7 @@ body{font-family:'Rostelecom Basis',sans-serif;background:var(--bg);color:var(--
 
 /* Hero */
 .hero{padding:40px 0 32px}
-.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:8px;background:linear-gradient(135deg,var(--purple),var(--orange));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;font-family:inherit;margin-bottom:8px;background:linear-gradient(135deg,var(--purple),var(--orange));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 .hero p{color:var(--text-secondary);font-size:1.05rem;max-width:640px}
 
 /* Progress */
@@ -57,9 +55,9 @@ body{font-family:'Rostelecom Basis',sans-serif;background:var(--bg);color:var(--
 .progress-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(119,0,255,.12)}
 .progress-card h3{font-size:.85rem;font-weight:500;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
 .progress-numbers{display:flex;align-items:baseline;gap:6px;margin-bottom:12px}
-.progress-current{font-size:2.2rem;font-weight:700;color:var(--purple);font-family:'Rostelecom Basis',sans-serif;-webkit-text-fill-color:var(--purple)}
-.progress-separator{font-size:1.2rem;color:var(--text-secondary);font-family:'Rostelecom Basis',sans-serif}
-.progress-target{font-size:1.2rem;color:var(--text-secondary);font-weight:500;font-family:'Rostelecom Basis',sans-serif}
+.progress-current{font-size:2.2rem;font-weight:700;color:var(--purple);-webkit-text-fill-color:var(--purple)}
+.progress-separator{font-size:1.2rem;color:var(--text-secondary)}
+.progress-target{font-size:1.2rem;color:var(--text-secondary);font-weight:500}
 .progress-bar-bg{height:10px;background:var(--border);border-radius:99px;overflow:hidden}
 .progress-bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--purple),var(--orange));transition:width .8s cubic-bezier(.4,0,.2,1)}
 .progress-label{font-size:.8rem;color:var(--text-secondary);margin-top:8px}
@@ -84,9 +82,9 @@ body{font-family:'Rostelecom Basis',sans-serif;background:var(--bg);color:var(--
 
 /* Table */
 .table-wrap{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid var(--border);overflow:visible;margin-bottom:40px;padding-bottom:8px}
-#ratingTable{font-family:'Rostelecom Basis',sans-serif;font-synthesis:none}
+#ratingTable{font-synthesis:none}
 table{width:100%;border-collapse:collapse;overflow:visible}
-thead th{background:var(--purple);color:#fff;padding:14px 16px;text-align:left;font-weight:700;font-size:.875rem;font-family:'Rostelecom Basis',sans-serif;cursor:pointer;user-select:none;white-space:nowrap;transition:background .2s;-webkit-text-fill-color:#fff}
+thead th{background:var(--purple);color:#fff;padding:14px 16px;text-align:left;font-weight:700;font-size:.875rem;cursor:pointer;user-select:none;white-space:nowrap;transition:background .2s;-webkit-text-fill-color:#fff}
 thead th:first-child{border-radius:0}
 thead th:hover{background:var(--purple-dark)}
 thead th .sort-icon{opacity:.5;margin-left:4px;font-size:.75rem}
@@ -96,7 +94,7 @@ tbody tr:last-child{border-bottom:none}
 tbody tr:hover{background:var(--purple-light)}
 [data-theme="dark"] tbody tr:hover{background:rgba(119,0,255,.08)}
 tbody tr.inactive{opacity:.45}
-tbody td{padding:12px 16px;font-size:.9rem;font-family:'Rostelecom Basis',sans-serif;overflow:visible;position:relative}
+tbody td{padding:12px 16px;font-size:.9rem;overflow:visible;position:relative}
 td.num{color:var(--text-secondary);font-weight:400;width:50px}
 td.name{font-weight:500}
 td.metric{text-align:center;font-weight:400}
@@ -183,6 +181,35 @@ td.level-cell{overflow:visible}
 .loading-state{text-align:center;padding:48px 20px;color:var(--text-secondary)}
 .loading-state h3{color:var(--text);margin-bottom:8px}
 
+/* Auth gate */
+.auth-gate[hidden]{display:none!important}
+.auth-gate{
+  position:fixed;inset:0;z-index:10000;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--bg);padding:24px;
+}
+.auth-card{
+  width:100%;max-width:380px;
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);padding:32px 28px;
+  box-shadow:var(--shadow);text-align:center;
+}
+.auth-card h2{font-size:1.35rem;font-weight:700;margin-bottom:8px;color:var(--text);-webkit-text-fill-color:var(--text)}
+.auth-card p{color:var(--text-secondary);font-size:.95rem;margin-bottom:20px}
+.auth-card input{
+  width:100%;padding:12px 16px;margin-bottom:12px;
+  border:1px solid var(--border);border-radius:var(--radius-sm);
+  font-size:1rem;background:var(--surface-alt);color:var(--text);
+}
+.auth-card input:focus{outline:none;border-color:var(--purple)}
+.auth-card button{
+  width:100%;padding:12px 16px;border:none;border-radius:var(--radius-sm);
+  background:var(--purple);color:#fff;font-size:1rem;font-weight:700;cursor:pointer;
+  transition:background .2s;-webkit-text-fill-color:#fff;
+}
+.auth-card button:hover{background:var(--purple-dark)}
+.auth-error{color:var(--orange);font-size:.875rem;margin-top:12px}
+
 /* Responsive */
 @media(max-width:768px){
   .table-wrap{overflow-x:auto;overflow-y:visible}
@@ -195,6 +222,17 @@ td.level-cell{overflow:visible}
 </style>
 </head>
 <body>
+<div id="authGate" class="auth-gate">
+  <form id="authForm" class="auth-card">
+    <h2>Рейтинг ИИ-проводников</h2>
+    <p>Введите пароль для доступа</p>
+    <input type="password" id="authPassword" autocomplete="current-password" placeholder="Пароль" autofocus>
+    <button type="submit">Войти</button>
+    <p class="auth-error" id="authError" hidden>Неверный пароль</p>
+  </form>
+</div>
+
+<div id="appRoot" hidden>
 <header class="header">
   <div class="container header-inner">
     <a class="logo" href="https://afisha-university.rt.ru/ai_mentor" target="_blank">
@@ -291,6 +329,7 @@ td.level-cell{overflow:visible}
     <p class="footer-copy">© Все права защищены. 2026, ПАО «Ростелеком».</p>
   </div>
 </footer>
+</div>
 
 <script type="application/json" id="mentors-data">
 {
@@ -1634,6 +1673,7 @@ td.level-cell{overflow:visible}
   }
 }
 </script>
+<script src="auth.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
