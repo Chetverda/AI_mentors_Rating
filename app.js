@@ -329,4 +329,4 @@ async function init() {
   }
 }
 
-init();
+window.startApp = init;
