@@ -11,7 +11,7 @@ const LEVEL_ORDER = ['Онбординг', 'Первый уровень', 'Вт�
 let DATA = null;
 let globalTooltip = null;
 const state = {
-  quarter: 'q2',
+  quarter: 'q3',
   sortKey: 'total',
   sortDir: -1,
   search: '',
@@ -28,7 +28,7 @@ function escapeHtml(text) {
 }
 
 function getMentors() {
-  return DATA[state.quarter] || DATA.q2;
+  return DATA[state.quarter] || DATA.q3;
 }
 
 function renderProgress() {

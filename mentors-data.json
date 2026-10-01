@@ -869,48 +869,129 @@
   ],
   "all": [
     {
-      "name": "Безверхая Светлана",
-      "sessions": 15,
-      "masterclasses": 14,
-      "initiatives": 0,
-      "excelLevel": "Первый уровень",
-      "total": 29,
-      "level": "Третий уровень"
+      "name": "Гарифулин Игорь",
+      "sessions": 43,
+      "masterclasses": 3,
+      "initiatives": 1,
+      "excelLevel": "Второй уровень",
+      "total": 47,
+      "level": "Второй уровень"
     },
     {
-      "name": "Гарифулин Игорь",
-      "sessions": 24,
-      "masterclasses": 1,
+      "name": "Безверхая Светлана",
+      "sessions": 25,
+      "masterclasses": 19,
+      "initiatives": 0,
+      "excelLevel": "Третий уровень",
+      "total": 44,
+      "level": "Четвертый уровень — PRO"
+    },
+    {
+      "name": "Смирнов Денис",
+      "sessions": 13,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 13,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Арсентиева Светлана",
+      "sessions": 5,
+      "masterclasses": 6,
       "initiatives": 1,
       "excelLevel": "Первый уровень",
-      "total": 26,
+      "total": 12,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Языкова Юлия",
+      "sessions": 9,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 10,
       "level": "Второй уровень"
     },
     {
       "name": "Кулебякина Вера",
       "sessions": 0,
-      "masterclasses": 8,
+      "masterclasses": 9,
       "initiatives": 1,
       "excelLevel": "Первый уровень",
-      "total": 9,
+      "total": 10,
       "level": "Первый уровень"
     },
     {
-      "name": "Арсентиева Светлана",
-      "sessions": 1,
-      "masterclasses": 3,
+      "name": "Чернявский Валерий",
+      "sessions": 7,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 7,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Кононенко Ирина",
+      "sessions": 5,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 5,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Орлов Дмитрий",
+      "sessions": 5,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 5,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Цемежевская Валерия",
+      "sessions": 5,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 5,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Казанцев Сергей",
+      "sessions": 0,
+      "masterclasses": 4,
       "initiatives": 1,
       "excelLevel": "Первый уровень",
       "total": 5,
       "level": "Первый уровень"
     },
     {
-      "name": "Орлов Дмитрий",
-      "sessions": 4,
-      "masterclasses": 0,
+      "name": "Колчина Наталья",
+      "sessions": 0,
+      "masterclasses": 4,
       "initiatives": 0,
       "excelLevel": "Онбординг",
       "total": 4,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Башмакова Александра",
+      "sessions": 3,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 3,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Кудрявцева Мария",
+      "sessions": 2,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 3,
       "level": "Первый уровень"
     },
     {
@@ -918,7 +999,7 @@
       "sessions": 0,
       "masterclasses": 2,
       "initiatives": 1,
-      "excelLevel": "Онбординг",
+      "excelLevel": "Первый уровень",
       "total": 3,
       "level": "Первый уровень"
     },
@@ -950,13 +1031,22 @@
       "level": "Онбординг"
     },
     {
-      "name": "Языкова Юлия",
+      "name": "Тимченко Сергей",
       "sessions": 2,
       "masterclasses": 0,
       "initiatives": 0,
       "excelLevel": "Онбординг",
       "total": 2,
       "level": "Онбординг"
+    },
+    {
+      "name": "Анисимов Виталий",
+      "sessions": 1,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 2,
+      "level": "Первый уровень"
     },
     {
       "name": "Ларин Сергей",
@@ -969,15 +1059,6 @@
     },
     {
       "name": "Абрамов Игорь",
-      "sessions": 1,
-      "masterclasses": 0,
-      "initiatives": 0,
-      "excelLevel": "Онбординг",
-      "total": 1,
-      "level": "Онбординг"
-    },
-    {
-      "name": "Башмакова Александра",
       "sessions": 1,
       "masterclasses": 0,
       "initiatives": 0,
@@ -1004,6 +1085,24 @@
       "level": "Онбординг"
     },
     {
+      "name": "Демидова Анна",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Денисов Алексей",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
       "name": "Кулаков Александр",
       "sessions": 1,
       "masterclasses": 0,
@@ -1022,56 +1121,20 @@
       "level": "Онбординг"
     },
     {
-      "name": "Цемежевская Валерия",
+      "name": "Шаймиева Екатерина",
       "sessions": 1,
       "masterclasses": 0,
       "initiatives": 0,
       "excelLevel": "Онбординг",
       "total": 1,
       "level": "Онбординг"
-    },
-    {
-      "name": "Чернявский Валерий",
-      "sessions": 1,
-      "masterclasses": 0,
-      "initiatives": 0,
-      "excelLevel": "Онбординг",
-      "total": 1,
-      "level": "Онбординг"
-    },
-    {
-      "name": "Анисимов Виталий",
-      "sessions": 0,
-      "masterclasses": 1,
-      "initiatives": 0,
-      "excelLevel": "Первый уровень",
-      "total": 1,
-      "level": "Первый уровень"
-    },
-    {
-      "name": "Казанцев Сергей",
-      "sessions": 0,
-      "masterclasses": 1,
-      "initiatives": 0,
-      "excelLevel": "Онбординг",
-      "total": 1,
-      "level": "Первый уровень"
-    },
-    {
-      "name": "Кудрявцева Мария",
-      "sessions": 0,
-      "masterclasses": 1,
-      "initiatives": 0,
-      "excelLevel": "Онбординг",
-      "total": 1,
-      "level": "Первый уровень"
     },
     {
       "name": "Лукин Евгений",
       "sessions": 0,
       "masterclasses": 1,
       "initiatives": 0,
-      "excelLevel": "Онбординг",
+      "excelLevel": "Первый уровень",
       "total": 1,
       "level": "Первый уровень"
     },
@@ -1158,24 +1221,6 @@
     },
     {
       "name": "Зимин Максим",
-      "sessions": 0,
-      "masterclasses": 0,
-      "initiatives": 0,
-      "excelLevel": "Онбординг",
-      "total": 0,
-      "level": "Онбординг"
-    },
-    {
-      "name": "Колчина Наталья",
-      "sessions": 0,
-      "masterclasses": 0,
-      "initiatives": 0,
-      "excelLevel": "Онбординг",
-      "total": 0,
-      "level": "Онбординг"
-    },
-    {
-      "name": "Кононенко Ирина",
       "sessions": 0,
       "masterclasses": 0,
       "initiatives": 0,
@@ -1283,6 +1328,15 @@
       "level": "Онбординг"
     },
     {
+      "name": "Шакиров Юрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
       "name": "Ярушкин Сергей",
       "sessions": 0,
       "masterclasses": 0,
@@ -1330,11 +1384,491 @@
     }
   ],
   "stats": {
-    "totalEvents": 98,
+    "totalEvents": 197,
     "targetEvents": 160,
-    "engagedMentors": 23,
+    "engagedMentors": 30,
     "targetMentors": 40,
     "q1Events": 37,
-    "q2Events": 98
-  }
+    "q2Events": 98,
+    "q3Events": 197
+  },
+  "q3": [
+    {
+      "name": "Гарифулин Игорь",
+      "sessions": 43,
+      "masterclasses": 3,
+      "initiatives": 1,
+      "excelLevel": "Второй уровень",
+      "total": 47,
+      "level": "Второй уровень"
+    },
+    {
+      "name": "Безверхая Светлана",
+      "sessions": 25,
+      "masterclasses": 19,
+      "initiatives": 0,
+      "excelLevel": "Третий уровень",
+      "total": 44,
+      "level": "Четвертый уровень — PRO"
+    },
+    {
+      "name": "Смирнов Денис",
+      "sessions": 13,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 13,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Арсентиева Светлана",
+      "sessions": 5,
+      "masterclasses": 6,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 12,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Языкова Юлия",
+      "sessions": 9,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 10,
+      "level": "Второй уровень"
+    },
+    {
+      "name": "Кулебякина Вера",
+      "sessions": 0,
+      "masterclasses": 9,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 10,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Чернявский Валерий",
+      "sessions": 7,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 7,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Кононенко Ирина",
+      "sessions": 5,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 5,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Орлов Дмитрий",
+      "sessions": 5,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 5,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Цемежевская Валерия",
+      "sessions": 5,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 5,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Казанцев Сергей",
+      "sessions": 0,
+      "masterclasses": 4,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 5,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Колчина Наталья",
+      "sessions": 0,
+      "masterclasses": 4,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 4,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Башмакова Александра",
+      "sessions": 3,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 3,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Кудрявцева Мария",
+      "sessions": 2,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 3,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Кутепов Виталий",
+      "sessions": 0,
+      "masterclasses": 2,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 3,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Антонов Вячеслав",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Бучнев Сергей",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Сторожев Александр",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Тимченко Сергей",
+      "sessions": 2,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Анисимов Виталий",
+      "sessions": 1,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 2,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Ларин Сергей",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 1,
+      "excelLevel": "Первый уровень",
+      "total": 2,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Абрамов Игорь",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Внуковский Владислав",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Галиев Марсель",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Демидова Анна",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Денисов Алексей",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Кулаков Александр",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Смирнов Максим",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Шаймиева Екатерина",
+      "sessions": 1,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 1,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Лукин Евгений",
+      "sessions": 0,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Первый уровень",
+      "total": 1,
+      "level": "Первый уровень"
+    },
+    {
+      "name": "Аганин Геннадий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Андрейченко Надежда",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Бондарович Юлия",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Верещак Александр",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Вишняков Иван",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Густей Юрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Гуськова Наталья",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Демидова Татьяна",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Доманова Гульнара",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Зимин Максим",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Коротаев Евгений",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Костенко Анастасия",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Красноперов Дмитрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Куликова Ольга",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Лавренко Татьяна",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Мамнев Александр",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Петрова Светлана",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Прохоров Дмитрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Путро Екатерина",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Федорченко Александр",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Федотова Людмила",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Шакиров Юрий",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    },
+    {
+      "name": "Ярушкин Сергей",
+      "sessions": 0,
+      "masterclasses": 0,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 0,
+      "level": "Онбординг"
+    }
+  ]
 }
