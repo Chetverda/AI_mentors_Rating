@@ -1049,6 +1049,15 @@
       "level": "Первый уровень"
     },
     {
+      "name": "Демидова Анна",
+      "sessions": 1,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Первый уровень"
+    },
+    {
       "name": "Ларин Сергей",
       "sessions": 0,
       "masterclasses": 1,
@@ -1077,15 +1086,6 @@
     },
     {
       "name": "Галиев Марсель",
-      "sessions": 1,
-      "masterclasses": 0,
-      "initiatives": 0,
-      "excelLevel": "Онбординг",
-      "total": 1,
-      "level": "Онбординг"
-    },
-    {
-      "name": "Демидова Анна",
       "sessions": 1,
       "masterclasses": 0,
       "initiatives": 0,
@@ -1384,13 +1384,13 @@
     }
   ],
   "stats": {
-    "totalEvents": 204,
+    "totalEvents": 205,
     "targetEvents": 160,
     "engagedMentors": 30,
     "targetMentors": 40,
     "q1Events": 37,
     "q2Events": 98,
-    "q3Events": 204
+    "q3Events": 205
   },
   "q3": [
     {
@@ -1574,6 +1574,15 @@
       "level": "Первый уровень"
     },
     {
+      "name": "Демидова Анна",
+      "sessions": 1,
+      "masterclasses": 1,
+      "initiatives": 0,
+      "excelLevel": "Онбординг",
+      "total": 2,
+      "level": "Первый уровень"
+    },
+    {
       "name": "Ларин Сергей",
       "sessions": 0,
       "masterclasses": 1,
@@ -1602,15 +1611,6 @@
     },
     {
       "name": "Галиев Марсель",
-      "sessions": 1,
-      "masterclasses": 0,
-      "initiatives": 0,
-      "excelLevel": "Онбординг",
-      "total": 1,
-      "level": "Онбординг"
-    },
-    {
-      "name": "Демидова Анна",
       "sessions": 1,
       "masterclasses": 0,
       "initiatives": 0,
